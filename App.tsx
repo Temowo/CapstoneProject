@@ -1,26 +1,15 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import AuthStack from './src/navigation/AuthStack';
-
+import {ThemeProvider} from '@shopify/restyle';
+import theme from './src/resources/theme';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <AuthStack />
-    </NavigationContainer>
+    <ThemeProvider theme={theme}>
+      <AppNavigator />
+    </ThemeProvider>
   );
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
 

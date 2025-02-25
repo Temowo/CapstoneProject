@@ -1,0 +1,222 @@
+
+import { createTheme, spacing, useTheme } from "@shopify/restyle";
+import { wp } from "./layoutHelper";
+
+export const palette = {
+  black: "#000000",
+  bluishBlack: "#0F172A",
+  cancelRed: "#FF3333",
+  charcoal: "#334155",
+  mainBackground: "#FFFFFF",
+  error: "red",
+  brightPink: "#E91E63",
+  grayText: "#C4C4C4",
+  inactive: "#A7A7A7",
+  inactiveButton: "#555555",
+  inputError: "#E91E63",
+  ivoryYellow: "#CCCC54",
+  lightTint: "#E6F2FE",
+  lightButtonBackground: "#F9F9F9",
+  placeHolder: "#828282",
+  secondaryBackground: "#1E293B",
+  transparent: "transparent",
+  white: "#FFFFFF",
+  searchBackground: '#f5f5f5',
+};
+
+const theme = createTheme({
+  borderRadii: {
+    ml: wp(42),
+    x: wp(30),
+    l: wp(24),
+    sl: wp(20),
+    m: wp(18),
+    s: wp(12),
+    v: wp(10),
+  },
+  breakpoints: {
+    bigScreen: 412,
+    phone: 0,
+    tablet: 768,
+  },
+  colors: {
+    ...palette,
+    textColor: palette.charcoal,
+    headingColor: palette.bluishBlack,
+    mainBackground: palette.mainBackground,
+    errorBodyText: palette.cancelRed,
+    primaryButtonColor: palette.white,
+    brightPink: palette.brightPink
+  },
+  iconSizes: {
+    ML: { height: wp(60), width: wp(60) },
+    l: { height: wp(24), width: wp(24) },
+    m: { height: wp(16), width: wp(16) },
+    s: { height: wp(8), width: wp(8) },
+    sl: { height: wp(20), width: wp(20) },
+    sm: { height: wp(12), width: wp(12) },
+    xl: { height: wp(30), width: wp(30) },
+    xs: { height: wp(4), width: wp(4) },
+    xxl: { height: wp(40), width: wp(40) },
+    xxxl: { height: wp(56), width: wp(56) },
+    xxs: { height: wp(2), width: wp(2) },
+  },
+  spacing: {
+    lx: wp(73),
+    ml: wp(60),
+    mx: wp(45),
+    xm: wp(40),
+    xxx: wp(36),
+    x: wp(30),
+    l: wp(24),
+    sm: wp(20),
+    m: wp(16),
+    s: wp(12),
+    v: wp(8),
+    iv: wp(4),
+    nil: 0,
+  },
+  textVariants: {
+    bodyText: {
+      color: "textColor",
+      fontFamily: "SFPro-Regular",
+      fontSize: 16,
+      fontWeight: "400",
+      lineHeight: 24,
+      textAlign: "center",
+    },
+    bodyText2: {
+      color: "textColor",
+      fontFamily: "SFPro-Regular",
+      fontSize: 14,
+      fontWeight: "400",
+      lineHeight: 20,
+      textAlign: "center",
+    },
+    bodyText3: {
+      color: "textColor",
+      fontFamily: "SFPro-Regular",
+      fontSize: 13,
+      fontWeight: "500",
+      lineHeight: 22,
+    },
+    heading: {
+      color: "headingColor",
+      fontFamily: "SFPro-Semibold",
+      fontSize: 24,
+      fontWeight: "500",
+      lineHeight: 36,
+      textAlign: "center",
+    },
+    title: {
+      color: "headingColor",
+      fontFamily: "SFPro-Black",
+      fontSize: 24,
+      fontWeight: "900",
+      lineHeight: 36,
+      textAlign: "center",
+    },
+    largeTitle: {
+      color: "headingColor",
+      fontFamily: "SFPro-Bold",
+      fontSize: 36,
+      fontWeight: "700",
+      lineHeight: 36,
+      textAlign: "center",
+    },
+    buttonActive: {
+      color: "brightPink",
+      fontFamily: "SFPro-Semibold",
+      fontSize: 18,
+      fontWeight: "600",
+      lineHeight: 27,
+      textAlign: "center",
+    },
+    buttonInactive: {
+      color: "inactiveButton",
+      fontFamily: "SFPro-Semibold",
+      fontSize: 18,
+      fontWeight: "600",
+      lineHeight: 27,
+      textAlign: "center",
+    },
+    miniTitle: {
+      fontFamily: "SFPro-Light",
+      fontSize: 13,
+      fontWeight: "600",
+      lineHeight: 25,
+      textAlign: "center",
+      color: "textColor",
+    },
+    miniTitle2: {
+      fontFamily: "SFPro-Medium",
+      fontSize: 15,
+      fontWeight: "800",
+      lineHeight: 19,
+      textAlign: "center",
+    },
+    boldCaption: {
+      fontFamily: "SFPro-Bold",
+      fontSize: 12,
+      fontWeight: "500",
+      lineHeight: 15,
+      textAlign: "center",
+    },
+    heading1: {
+      fontFamily: "SFPro-Bold",
+      fontSize: 26,
+      fontWeight: "800",
+      lineHeight: 30,
+      textAlign: "left",
+    },
+    heading2: {
+      fontFamily: "SFPro-Bold",
+      fontSize: 22,
+      fontWeight: "800",
+      lineHeight: 30,
+      textAlign: "left",
+    },
+    errorBodyText: {
+      fontFamily: "SFPro-Regular",
+      fontSize: 12,
+      fontWeight: "300",
+      lineHeight: 15,
+      textAlign: "left",
+      color: "errorBodyText"
+    },
+  },
+  buttonStyles: {
+    primaryButton: {
+      backgroundColor: palette.brightPink,
+      paddingHorizontal: wp(24),
+      borderRadius: wp(30),
+      width: '100%',
+      height: 55,
+      alignItems: 'center',
+      justifyContent: "center",
+      color: "primaryButtonColor"
+    },
+  },
+  textInputStyles: {
+    input: {
+      borderWidth: 1,
+      borderColor: palette.bluishBlack,
+      borderRadius: wp(8),
+      marginBottom: wp(15),
+    },
+    validInput: {
+      borderWidth: 2,
+      borderColor: palette.brightPink,
+      borderRadius: wp(8),
+      marginBottom: wp(15),
+    },
+    inputError: {
+      borderColor: palette.error,
+      marginBottom: wp(5)
+    },
+  },
+});
+
+export const useRestyleTheme = () => useTheme();
+
+export default theme;

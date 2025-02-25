@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
+import CustomBackButton from '../components/CustomBackButton'; // Keep this import
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -32,6 +33,9 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {/* Keep CustomBackButton */}
+      <CustomBackButton />
+
       <Text style={styles.title}>Create Your Account 🍱</Text>
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
